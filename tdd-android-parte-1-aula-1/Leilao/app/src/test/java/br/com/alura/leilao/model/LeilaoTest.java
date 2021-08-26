@@ -18,6 +18,7 @@ public class LeilaoTest {
         assertEquals("Console", descricaoDevolvida);
     }
 
+    //02. Introdução aos testes automatizados
     @Test
     public void getMaiorLance(){
         Leilao lance = new Leilao("lance");

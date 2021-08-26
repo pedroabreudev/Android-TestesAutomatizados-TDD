@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class LeilaoTest {
 
+    //01. Implementando primeiras features
     @Test
     public void getDescricao() {
         // criar o cenário de teste

@@ -167,4 +167,7 @@ public class LeilaoTest {
     }
 
     // TODO: 27/08/2021 - Android Parte 1:Testes automatizados e TDD - Finalizado
+
+    // TODO: 27/08/2021 - Android Parte 2: Boas práticas e novos cenários de testes - Iniciado 
+    
 }

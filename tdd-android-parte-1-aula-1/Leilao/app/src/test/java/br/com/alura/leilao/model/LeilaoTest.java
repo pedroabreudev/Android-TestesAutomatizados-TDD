@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.List;
 
 public class LeilaoTest {
+    // TODO: 26/08/2021 - Android Parte 1:Testes automatizados e TDD - Iniciado
     //template para o nome do teste
     // [nome do método] [Estado de teste] [resultado esperado]
 
@@ -164,4 +165,6 @@ public class LeilaoTest {
         assertEquals(500.0,
                 tresMaioresLancesDevolvidosParaCincoLances.get(2).getValor(), DELTA);
     }
+
+    // TODO: 27/08/2021 - Android Parte 1:Testes automatizados e TDD - Finalizado
 }

@@ -46,16 +46,6 @@ public class LeilaoTest {
     }
 
     @Test
-    public void deve_DevolveMaiorLance_QuandoRecebeMaisDeUmLanceEmOrdemDecrescente() {
-        CONSOLE.propoe(new Lance(ALEX, 10000.0));
-        CONSOLE.propoe(new Lance(new Usuario("Fran"), 9000.0));
-
-        double maiorLanceDevolvido = CONSOLE.getMaiorLance();
-
-        assertEquals(10000.0, maiorLanceDevolvido, DELTA);
-    }
-
-    @Test
     public void deve_DevolveMenorLance_QuandoRecebeApenasUmLance() {
         CONSOLE.propoe(new Lance(ALEX, 200.0));
 
@@ -72,16 +62,6 @@ public class LeilaoTest {
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
         assertEquals(100.0, menorLanceDevolvido, DELTA);
-    }
-
-    @Test
-    public void deve_DevolveMenorLance_QuandoRecebeMaisDeUmLanceEmOrdemDecrescente() {
-        CONSOLE.propoe(new Lance(ALEX, 10000.0));
-        CONSOLE.propoe(new Lance(new Usuario("Fran"), 9000.0));
-
-        double menorLanceDevolvido = CONSOLE.getMenorLance();
-
-        assertEquals(9000.0, menorLanceDevolvido, DELTA);
     }
 
     @Test
@@ -165,9 +145,27 @@ public class LeilaoTest {
         assertEquals(500.0,
                 tresMaioresLancesDevolvidosParaCincoLances.get(2).getValor(), DELTA);
     }
-
     // TODO: 27/08/2021 - Android Parte 1:Testes automatizados e TDD - Finalizado
 
-    // TODO: 27/08/2021 - Android Parte 2: Boas práticas e novos cenários de testes - Iniciado 
-    
+
+    // TODO: 27/08/2021 - Android Parte 2: Boas práticas e novos cenários de testes - Iniciado
+    @Test
+    public void deve_DevolverValorZeroParaMaiorLance_QuandoNaotiverLances() {
+        double maiorLanceDevolvido = CONSOLE.getMaiorLance();
+        assertEquals(0.0, maiorLanceDevolvido, DELTA);
+    }
+
+    @Test
+    public void deve_DevolverValorZeroParaMenorLance_QuandoNaotiverLances() {
+        double menorLanceDevolvido = CONSOLE.getMenorLance();
+        assertEquals(0.0, menorLanceDevolvido, DELTA);
+    }
+
+    @Test
+    public void naoDeve_AdicionarLance_QuandoForMenorQueOMaiorLance() {
+        CONSOLE.propoe(new Lance(ALEX, 500.0));
+        CONSOLE.propoe(new Lance(new Usuario("Fran"), 400.0));
+        int quantidadeLancesDevolvida = CONSOLE.quantidadeLances();
+        assertEquals(1, quantidadeLancesDevolvida);
+    }
 }
